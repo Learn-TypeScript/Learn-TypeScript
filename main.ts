@@ -136,6 +136,7 @@ function add2(num1: number, num2?: number): number {
 }
 add2(5);
 
+// 8.2.
 // Default parameters
 // Are like Optional, but with a set value instead of undefined.
 function add3(num1: number, num2: number = 10): number {
@@ -144,3 +145,24 @@ function add3(num1: number, num2: number = 10): number {
 add3(5, 10); // 15
 add3(5); // 15
 
+// 9. Interfaces
+
+// You can specify an obj as type.
+// object type: {firstName: string, lastName: string}
+// function fullName(person: {firstName: string, lastName: string}) {
+// 	console.log(`${person.firstName} ${person.lastName}`);
+// } 
+
+interface Person {
+	firstName: string;
+	lastName?: string; // To make it optional put a ?
+}
+function fullName(person: Person) {
+	console.log(`${person.firstName} ${person.lastName}`);
+} 
+	let p = {
+		firstName: 'Bruce',
+		lastName: 'Wayne' // This can be removed if optional
+	};
+
+	fullName(p)
